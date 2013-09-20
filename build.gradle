@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply plugin: "cpp-lib"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.1.7'
+    compile 'net.java.dev.jna:jna:4.0.0'
+
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
+
+test {
+    it.dependsOn 'mainSharedLibrary'
+    environment 'LD_LIBRARY_PATH', 'build/binaries/mainSharedLibrary/'
+}
