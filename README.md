@@ -8,9 +8,4 @@ mangled.
 
 ## Known Issues
 
- - <s>I believe Gradle is using g++ for the compilation, and I can't work out how
-   to avoid name mangling (ie:  The `add` method has to be called `_Z3addii`)
-   in Groovy.</s>
- - <s>On OS X, you can use `nm libGroovyCProject.dylib` to find the mangled name of
-   your functions.</s>
  - Not tried this project on Windows or Linux ;-)
