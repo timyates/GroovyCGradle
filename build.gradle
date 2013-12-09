@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: "cpp-lib"
+apply plugin: "c"
 
 repositories {
     mavenCentral()
@@ -12,7 +12,13 @@ dependencies {
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
 
+libraries {
+    GroovyCGradle {}
+} 
+
+sources.main.c.lib libraries.GroovyCGradle
+
 test {
-    it.dependsOn 'mainSharedLibrary'
-    environment 'LD_LIBRARY_PATH', 'build/binaries/mainSharedLibrary/'
+    it.dependsOn 'groovyCGradleSharedLibrary'
+    environment 'LD_LIBRARY_PATH', 'build/binaries/GroovyCGradleSharedLibrary/'
 }

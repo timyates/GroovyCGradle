@@ -6,6 +6,6 @@ class Example {
     static myMath = Native.loadLibrary( 'GroovyCGradle', IMath )
 
     int add( int a, int b ) {
-        myMath._Z3addii( a, b )
+        myMath.add( a, b )
     }
 }
